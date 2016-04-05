@@ -9,17 +9,31 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.Personnes;
 
-	@WebServlet(name="userinfo",
-	urlPatterns={"/UserInfo"})
-	public class UserInfo extends HttpServlet {
-		
+
+@WebServlet(name="userinfo", urlPatterns={"/UserInfo"})
+	public class UserInfo extends HttpServlet {	
+	
+	MyService serv = null;
+
+	@Override
+	public void init() throws ServletException {
+		// TODO Auto-generated method stub
+		super.init();
+		serv =  MyService.getInstance();
+	}
+	
 		public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			response.setContentType("text/html");
 	
-			PrintWriter out = response.getWriter();
-	
-		
-			out.println("<HTML>\n<BODY>\n" + "<H1>Recapitulatif des informations</H1>\n" + "<UL>\n" + " <LI>Nom: " + request.getParameter("name") + "\n" + " <LI>Prenom: " + request.getParameter("firstname") + "\n" + " <LI>Age: " + request.getParameter("age") + "\n" + "</UL>\n" +	"</BODY></HTML>");
-		}
+			String name = request.getParameter("name");
+			String firstname = request.getParameter("firstname");
+
+			Personnes person = new Personnes(name, firstname, null, 0, null);
+			serv.addPerson(person);
+			PrintWriter p = new PrintWriter(response.getOutputStream());
+			p.print("Nombre de Person : " + serv.getAllPersons().size());
+			p.flush();
+}
 }
