@@ -1,16 +1,18 @@
-package TP.istic.dudcl.TP2.Servlet;
+package model;
 
 import java.util.Date;
+import java.util.List;
 
 public class Personnes {
 	
 	String nom;
 	String prenom;
-	Date dateDeNaissance;
+	String dateDeNaissance;
 	int age;
 	String adresse;
+	List<Personnes> friends;
 	
-	public Personnes(String nom, String prenom, Date dateDeNaissance, int age, String adresse) {
+	public Personnes(String nom, String prenom, String dateDeNaissance, int age, String adresse) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
@@ -35,11 +37,11 @@ public class Personnes {
 		this.prenom = prenom;
 	}
 
-	public Date getDateDeNaissance() {
+	public String getDateDeNaissance() {
 		return dateDeNaissance;
 	}
 
-	public void setDateDeNaissance(Date dateDeNaissance) {
+	public void setDateDeNaissance(String dateDeNaissance) {
 		this.dateDeNaissance = dateDeNaissance;
 	}
 
