@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.Personnes;
+import model.Personne;
 
 
 @WebServlet(name="userinfo", urlPatterns={"/UserInfo"})
@@ -30,7 +30,7 @@ import model.Personnes;
 			String name = request.getParameter("name");
 			String firstname = request.getParameter("firstname");
 
-			Personnes person = new Personnes(name, firstname, null, 0, null);
+			Personne person = new Personne(name, firstname, null, 0, null);
 			serv.addPerson(person);
 			PrintWriter p = new PrintWriter(response.getOutputStream());
 			p.print("Nombre de Person : " + serv.getAllPersons().size());

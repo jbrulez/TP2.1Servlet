@@ -13,8 +13,6 @@ public class Heater {
 	}
 	public void setPower(String power) {
 		this.power = power;
-	}
-	
-	
+	}	
 
 }

@@ -3,13 +3,13 @@ package TP.istic.dudcl.TP2.Servlet;
 import java.util.ArrayList;
 import java.util.Date;
 
-import model.Personnes;
+import model.Personne;
 
 import java.util.List;
 
 public class MyService {
 	
-	List<Personnes> pers = new ArrayList<Personnes>();
+	List<Personne> pers = new ArrayList<Personne>();
 	
 	private static MyService instance = null;
 	
@@ -21,20 +21,20 @@ public class MyService {
 
 	private MyService() {
 		
-		Personnes p = new Personnes("Dupont","Jean", "17/04/1989", 27, "18 rue Charcot");
+		Personne p = new Personne("Dupont","Jean", "17/04/1989", 27, "18 rue Charcot");
 			
 		pers.add(p);
 	
 	}
 	
-	public List<Personnes> getAllPersons(){
+	public List<Personne> getAllPersons(){
 		
 		
 		
 		return pers;
 		
 	}
-	public void addPerson( Personnes p){
+	public void addPerson( Personne p){
 		
 		
 		

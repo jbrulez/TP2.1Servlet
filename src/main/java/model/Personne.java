@@ -1,18 +1,17 @@
 package model;
 
-import java.util.Date;
 import java.util.List;
 
-public class Personnes {
+public class Personne {
 	
 	String nom;
 	String prenom;
 	String dateDeNaissance;
 	int age;
 	String adresse;
-	List<Personnes> friends;
+	List<Personne> friends;
 	
-	public Personnes(String nom, String prenom, String dateDeNaissance, int age, String adresse) {
+	public Personne(String nom, String prenom, String dateDeNaissance, int age, String adresse) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
@@ -87,7 +86,7 @@ public class Personnes {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Personnes other = (Personnes) obj;
+		Personne other = (Personne) obj;
 		if (adresse == null) {
 			if (other.adresse != null)
 				return false;
